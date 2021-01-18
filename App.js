@@ -13,34 +13,6 @@ import {createStackNavigator} from 'react-navigation-stack';
 //   constructor(props) {
 //     super(props);
 
-//     let all_content = [
-//   {
-//     title: this.getTime(),
-//     words: this.getDate(),
-//     image: null,
-//     page: 0
-//   },
-//   {
-//     title: "Quote of the Day",
-//     words: "",
-//     image: null,
-//     page: 1
-//   },
-//   {
-//     title: 'Daily Calvin and Hobbes',
-//     words: this.getDate(),
-//     image: null,
-//     page: 0
-//   },
-//   {
-//     title: "Pictures to make you smile",
-//     words: this.getDate(),
-//     image: null,
-//     page: 0
-//   }
-// ]
-//   }
-
   const MainNavigator = createStackNavigator({
     MainContent: {screen: MainContent},
     Quote: {screen: Quote},

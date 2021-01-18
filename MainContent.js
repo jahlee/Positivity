@@ -1,5 +1,5 @@
 import React from "react"
-import {Text, View, Button, Linking } from "react-native";
+import {Text, View, Button, Linking, StyleSheet } from "react-native";
 import {Quote} from "./Quote";
 
 export function MainContent(props) {
@@ -10,13 +10,16 @@ export function MainContent(props) {
   getTimeOfDay = () => {
     let options = { hour: '2-digit', hour12: false };
     let hour = new Date().toLocaleTimeString('en-us', options);
+    console.log(hour)
     if (hour > 0 && hour < 12) {
       return "Good morning!"
     }
     else if (hour < 17) {
-      return "Good evening!"
+      return "Good afternoon!"
     }
-    return "Good night!"
+    else {
+      return "Good evening!"
+    } 
   }
 
   getDate = () => {
@@ -25,18 +28,43 @@ export function MainContent(props) {
     return prnDt;
   }
 
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    nextButton:{
+      backgroundColor:"#90bdff",
+      borderRadius:50,
+      padding:10,
+      width:"50%",
+      alignItems:"center",
+      marginTop:100
+    },
+
+    bottom: {
+      position: 'absolute',
+      bottom: 30
+    }
+  });
+
   return (
     <>
-    <View style={{ alignItems: "center" }}>
+    <View style={styles.container}>
 
       <Text style={{ paddingTop: 10, fontSize: 24, fontWeight: "bold" }}>
-        Today is {getTimeOfDay()}
+        {getTimeOfDay()}
       </Text>
-      <Text style={{ paddingTop: 10, fontSize: 15, fontStyle: "italic" }}>{getDate()}</Text>
-      <Button
-      title={"Next Page"}
-      onPress={() => {props.navigation.navigate("Quote")}}
-      ></Button>
+      <Text style={{ paddingTop: 10, fontSize: 15, fontStyle: "italic" }}>Today is {getDate()}</Text>
+      <View style={styles.bottom}>
+        <Button
+          style ={styles.nextButton}
+          title={"Next Page"}
+          onPress={() => {props.navigation.navigate("Quote")}}
+        ></Button>
+      </View>
       <View
       style={{ height:1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24,}}
       ></View>
