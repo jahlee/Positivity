@@ -16,8 +16,6 @@ export function Pics(props) {
     })
     .then((res) => {
       pic_url = res["url"];
-      console.log(pic_url)
-      console.log("^ends bad: " + pic_url.endsWith(".gif") || pic_url.endsWith(".mp4"));
       bad = pic_url.trim().endsWith(".gif") || pic_url.trim().endsWith(".mp4");
     });
   }
@@ -41,15 +39,12 @@ export function Pics(props) {
   return (
     <>
     <View style={styles.container}>
-
       {getAPI()}
       <Text style={{ paddingTop: 10, paddingBottom: 20, fontSize: 24, fontWeight: "bold" }}>
         {TITLE}
       </Text>
-      {/* <Image source={{uri: pic_url !== null ? pic_url : './assets/icon.png'}} */}
       <Image style={{ paddingTop: 10}} source={{uri: bad ? DEFAULT_PIC : pic_url}} style={{ width: Dimensions.get('window').width * 0.9, height: Dimensions.get('window').width * 0.9}}
       ></Image>
-
       <View style={styles.bottom}>
         <View style={{ flexDirection:"row" }}>
           <View style={styles.sideButtonStyle}>
@@ -63,7 +58,6 @@ export function Pics(props) {
             <Button
               title={"Next Page"}
               onPress={() => {props.navigation.navigate("EndContent");
-              console.log(1)
               }}
             ></Button>
           </View>
@@ -71,7 +65,7 @@ export function Pics(props) {
       </View>
 
       <View
-      style={{ height:1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24,}}
+      style={{ height:1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24}}
       ></View>
       
     </View>

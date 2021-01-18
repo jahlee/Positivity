@@ -1,7 +1,7 @@
 import React from "react"
 import { Text, View, Button, StyleSheet } from "react-native" 
 
-let quote = ""
+let quote = "You had me at meat tornado."
 const TITLE = "A Quote to Inspire"
 const API = "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
 
@@ -23,11 +23,11 @@ export function Quote(props) {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     },
     sideButtonStyle: {
       marginHorizontal: 60,
-      marginTop: 10,
+      marginTop: 10
     },
     bottom: {
       position: 'absolute',
@@ -42,7 +42,7 @@ export function Quote(props) {
       <Text style={{ paddingTop: 10, fontSize: 24, fontWeight: "bold", paddingBottom: 10 }}>
         {TITLE}
       </Text>
-      <Text style={{ paddingTop: 10, paddingLeft: 10, paddingRight: 10, fontSize: 15, fontStyle: "italic" }}>{getAPI()} {quote}</Text>
+      <Text style={{ paddingTop: 10, paddingLeft: 10, paddingRight: 10, fontSize: 15, fontStyle: "italic" }}>{getAPI()}{quote}</Text>
       <Text style={{ paddingTop: 20, paddingVertical: 50, fontSize: 12 }}>- Ron Swanson</Text>
       <View style={styles.bottom}>
       <View style={{ flexDirection:"row" }}>
@@ -57,7 +57,6 @@ export function Quote(props) {
             <Button
               title={"Next Page"}
               onPress={() => {props.navigation.navigate("CalvHob");
-              console.log(1)
               }}
             ></Button>
           </View>

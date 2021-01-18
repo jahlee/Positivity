@@ -36,8 +36,6 @@ export function CalvHob(props) {
 
   const randomNum = () => {
     imgNum = Math.floor(Math.random() * ALL_IMAGES.length);
-    console.log(imgNum);
-    console.log(ALL_IMAGES[imgNum])
   }
 
   return (
@@ -47,14 +45,11 @@ export function CalvHob(props) {
       <Text style={{ paddingTop: 10, paddingBottom: 30, fontSize: 24, fontWeight: "bold" }}>
         {TITLE}
       </Text>
-
       <Image source={{uri: ALL_IMAGES[imgNum] !== null ? ALL_IMAGES[imgNum] : './assets/icon.png'}} style= {{ width: Dimensions.get('window').width * 0.95, height: Dimensions.get('window').height * 0.155}}
       ></Image>
-
       <View
       style={{ height:1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24,}}
       ></View>
-
       <View style={styles.bottom}>
         <View style={{ flexDirection:"row" }}>
           <View style={styles.sideButtonStyle}>
@@ -68,7 +63,6 @@ export function CalvHob(props) {
             <Button
               title={"Next Page"}
               onPress={() => {props.navigation.navigate("Pics");
-              console.log(1)
               }}
             ></Button>
           </View>

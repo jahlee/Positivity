@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
 import { MainContent } from "./MainContent";
 import { Quote } from "./Quote";
@@ -25,5 +24,3 @@ import { createStackNavigator } from 'react-navigation-stack';
   const App = createAppContainer(MainNavigator);
 
   export default App;
-
- 

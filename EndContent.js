@@ -14,12 +14,12 @@ export function EndContent(props) {
       justifyContent: 'center',
     },
     nextButton:{
-      backgroundColor:"#90bdff",
-      borderRadius:50,
-      padding:10,
-      width:"50%",
-      alignItems:"center",
-      marginTop:100
+      backgroundColor: "#90bdff",
+      borderRadius: 50,
+      padding: 10,
+      width: "50%",
+      alignItems: "center",
+      marginTop: 100
     },
 
     bottom: {

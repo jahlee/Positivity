@@ -6,7 +6,6 @@ export function MainContent(props) {
   getTimeOfDay = () => {
     let options = { hour: '2-digit', hour12: false };
     let hour = new Date().toLocaleTimeString('en-us', options);
-    console.log(hour)
     if (hour > 0 && hour < 12) {
       return "Good morning!"
     }
@@ -31,13 +30,13 @@ export function MainContent(props) {
       alignItems: 'center',
       justifyContent: 'center',
     },
-    nextButton:{
-      backgroundColor:"#90bdff",
-      borderRadius:50,
-      padding:10,
-      width:"50%",
-      alignItems:"center",
-      marginTop:100
+    nextButton: {
+      backgroundColor: "#90bdff",
+      borderRadius: 50,
+      padding: 10,
+      width: "50%",
+      alignItems: "center",
+      marginTop: 100
     },
 
     bottom: {
@@ -62,7 +61,7 @@ export function MainContent(props) {
         ></Button>
       </View>
       <View
-      style={{ height:1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24,}}
+      style={{ height: 1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24,}}
       ></View>
       
     </View>
