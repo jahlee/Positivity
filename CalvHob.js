@@ -1,5 +1,5 @@
 import React from "react"
-import {Text, View, Image, Button, Linking, StyleSheet, Dimensions } from "react-native" 
+import { Text, View, Image, Button, StyleSheet, Dimensions } from "react-native" 
 
 const TITLE="Daily Calvin and Hobbes";
 let imgNum = 0;
@@ -16,10 +16,6 @@ const ALL_IMAGES = [
 ]
 
 export function CalvHob(props) {
-  // const title = props.title;
-  // const words = props.words;
-  // const image = props.image;
-
 
   const styles = StyleSheet.create({
     container: {

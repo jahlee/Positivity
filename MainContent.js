@@ -1,11 +1,7 @@
 import React from "react"
-import {Text, View, Button, Linking, StyleSheet } from "react-native";
-import {Quote} from "./Quote";
+import { Text, View, Button, StyleSheet } from "react-native";
 
 export function MainContent(props) {
-  // const title = props.title;
-  // const words = props.words;
-  // const image = props.image;
 
   getTimeOfDay = () => {
     let options = { hour: '2-digit', hour12: false };

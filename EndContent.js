@@ -1,10 +1,10 @@
 import React from "react"
-import {Text, View, Button, Linking, StyleSheet } from "react-native" 
+import { Text, View, Button, StyleSheet, Dimensions, Image } from "react-native" 
 
 export function EndContent(props) {
   const TITLE = "That's it for today!";
   const WORDS = "Hope you have a fantastic, productive, and absolutely awesome day! See ya tomorrow!";
-  // const image = props.image;
+  const IMAGE = './assets/goodbye.jpeg';
 
   const styles = StyleSheet.create({
     container: {
@@ -35,7 +35,9 @@ export function EndContent(props) {
       <Text style={{ paddingTop: 10, paddingBottom: 20, fontSize: 24, fontWeight: "bold" }}>
         {TITLE}
       </Text>
-      <Text style={{ paddingTop: 10, paddingLeft: 8, paddingRight: 8, fontSize: 15, fontStyle: "italic" }}>{WORDS}</Text>
+      <Text style={{ paddingTop: 10, paddingBottom: 30, paddingLeft: 8, paddingRight: 8, fontSize: 15, fontStyle: "italic" }}>{WORDS}</Text>
+      <Image source={require(IMAGE)} style={{width: Dimensions.get('window').width * 0.9, height: Dimensions.get('window').width * 0.6}}
+      ></Image>
       <View
       style={{ height:1, backgroundColor: "#CCC", marginTop: 24, marginBottom: 24,}}
       ></View>

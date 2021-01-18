@@ -1,38 +1,20 @@
 import React from "react"
-import {Text, View, Image, Button, Linking, StyleSheet, Dimensions } from "react-native"
-import {EndContent} from "./EndContent";
+import { Text, View, Image, Button, StyleSheet, Dimensions } from "react-native"
 
-let pic_url="./assets/icon.png";
+const DEFAULT_PIC="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
+const TITLE="Smile!";
+const API="https://random.dog/woof.json";
+let pic_url = "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
 let bad = true;
-const TITLE="Smile!"
 
 export function Pics(props) {
-  // OR http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true choose count [1-100]
-  // const getAPI = () => {
-  //   const NUM = Math.ceil(Math.random() * 100);
-  //   fetch("http://shibe.online/api/shibes?count="+{NUM}+"&urls=true&httpsUrls=true")
-  //   .then((j) => {
-  //     console.log("first step pics");
-  //     return j.json();
-  //   })
-  //   .then((res) => {
-  //     console.log("second step pics");
-  //     pic_url = res[0];
-  //     console.log(pic_url)
-  //     console.log("^ends bad: " + pic_url.endsWith(".gif") || pic_url.endsWith(".mp4"));
-  //     bad = pic_url.trim().endsWith(".gif") || pic_url.trim().endsWith(".mp4");
-  //   });
-  // }
-
   // contains: mp4, gif, webm, jp[e]g, png
   const getAPI = () => {
-    fetch("https://random.dog/woof.json")
+    fetch(API)
     .then((j) => {
-      console.log("first step pics");
       return j.json();
     })
     .then((res) => {
-      console.log("second step pics");
       pic_url = res["url"];
       console.log(pic_url)
       console.log("^ends bad: " + pic_url.endsWith(".gif") || pic_url.endsWith(".mp4"));
@@ -65,7 +47,7 @@ export function Pics(props) {
         {TITLE}
       </Text>
       {/* <Image source={{uri: pic_url !== null ? pic_url : './assets/icon.png'}} */}
-      <Image style={{ paddingTop: 10}} source={{uri: bad ? './assets/default-picture.jpg' : pic_url}} style={{ width: Dimensions.get('window').width * 0.9, height: Dimensions.get('window').width * 0.9}}
+      <Image style={{ paddingTop: 10}} source={{uri: bad ? DEFAULT_PIC : pic_url}} style={{ width: Dimensions.get('window').width * 0.9, height: Dimensions.get('window').width * 0.9}}
       ></Image>
 
       <View style={styles.bottom}>
